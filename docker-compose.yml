@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '8080:8080'
+
+  db:
+    container_name: 'Postgres'
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: 'db'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '5432:5432'
+
+  updater:
+    container_name: 'DB_Updater'
+    build: '.'
+    volumes:
+      - /Users/mal/Repos/db_updater:/tasks
+    restart: on-failure
+    env_file:
+      - .env
+    command: >
+      sh -c "
+            python tools/set_up_test_dbs.py &&
+            python app/main.py"
+    depends_on:
+      - 'db'
+    links:
+      - 'db'
