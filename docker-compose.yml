@@ -1,22 +1,22 @@
 version: '3'
 
 services:
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - '8080:8080'
+  #adminer:
+  #  image: adminer
+  #  restart: always
+  #  ports:
+  #    - '8080:8080'
 
-  db:
-    container_name: 'Postgres'
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_DB: 'db'
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'postgres'
-    ports:
-      - '5432:5432'
+  #db:
+  #  container_name: 'Postgres'
+  #  image: postgres
+  #  restart: always
+  #  environment:
+  #    POSTGRES_DB: 'db'
+  #    POSTGRES_USER: 'postgres'
+  #    POSTGRES_PASSWORD: 'postgres'
+  #  ports:
+  #    - '5432:5432'
 
   updater:
     container_name: 'DB_Updater'
@@ -30,7 +30,7 @@ services:
       sh -c "
             python tools/set_up_test_dbs.py &&
             python app/main.py"
-    depends_on:
-      - 'db'
-    links:
-      - 'db'
+    #depends_on:
+    #  - 'db'
+    #links:
+    #  - 'db'
