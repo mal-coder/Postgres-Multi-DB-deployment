@@ -28,9 +28,3 @@ async def process_task(database, task, task_logger, results):
         except Exception:
             results['error'].append(e)
             task_logger.error(msg=f'ERROR: Task on {database[0].upper()} failed: {e}')
-
-
-
-
-
-
