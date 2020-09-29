@@ -1,0 +1,15 @@
+{
+  "exclude": [
+    "postgres",
+    "template1",
+    "template0"
+  ],
+  "databases": [],
+  "tasks": {
+    "create_table_persons": "CREATE TABLE Persons (PersonID int,LastName varchar(255),FirstName varchar(255),Address varchar(255),City varchar(255));",
+    "create_table_animals": "CREATE TABLE Animals (AnimalID int,Name varchar(255));",
+    "drop_table_persons": "DROP TABLE Persons",
+    "drop_table_yolo": "DROP TABLE YOLO",
+    "insert_into_animals": "INSERT INTO Animals VALUES (1, 'Maciej')"
+  }
+}
