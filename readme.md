@@ -28,12 +28,6 @@ $ pipenv install
 ```
 Set up the *.env* file with:
 ```
-SECRET=[Sonos dev account Secret]
-KEY=[Sonos dev account Key/ClientId]
-
-REDIRECT_URI=[ REDIRECT_URI copied form Sonos Dev account, eg.: https://io.io/auth/callback
-EVENT_CALLBACK_URI=[ EVENT CALLBACK URI copied form Sonos Dev account, eg. https://io.io/event/callback]
-
 PRODUCTION=[False for running tasks on test DBs, True for normal usage]
 TASKS_PATH=[yourpath/tasks.json - path to you tasks.json file]
 TOP_ERROR_COUNT=[10 - number of most common errors to be send in the email]
