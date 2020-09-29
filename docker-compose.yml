@@ -22,7 +22,7 @@ services:
     container_name: 'DB_Updater'
     build: '.'
     volumes:
-      - /Users/mal/Repos/db_updater:/tasks
+      - /db_updater:/tasks
     restart: on-failure
     env_file:
       - .env
