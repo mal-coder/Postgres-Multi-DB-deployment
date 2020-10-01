@@ -1,12 +1,12 @@
 --------------------
-# Postgres DB Updater
+# Postgres Multi DB deployment
 
-Postgres DB Updater is a tool which task is to facilitate bulk modifications on multiple Postgres DBs'.  
+Postgres Multi DB deployment is a tool which task is to facilitate bulk modifications on multiple Postgres DBs'.  
 
 After finishing specific tasks it sends a notification email with a log file and a summary containing 
 the number of successful and failed operations and most common errors. 
 
-Postgres DB Updater gathers the provided tasks and executes them one by one on each of the databases 
+Postgres Multi DB deployment gathers the provided tasks and executes them one by one on each of the databases 
 asynchronously. Once a task is executed on all databases the notification email is being sent and 
 the next task processed.
 
@@ -19,9 +19,9 @@ Before you begin, ensure you have met the following requirements
 * an email account compatible with *smtplib*
 
 
-## Installing Postgres DB Updater
+## Installing Postgres Multi DB deployment
 
-To install Postgres DB Updater, follow these steps:
+To install Postgres Multi DB deployment, follow these steps:
 * Clone the repository and create a virtual environment with pipenv to install all the needed libraries
 ```
 $ pipenv install
@@ -42,7 +42,7 @@ EMAIL_PASSWORD=[your google email password]
 RECEIVER_EMAIL=[recievers email address]
 ```
 
-## Using Postgres DB Updater
+## Using Postgres Multi DB deployment
 
 Before running the app you must configure the *tasks.json* file correctly:
 
@@ -81,7 +81,7 @@ SQL query you want to execute.
 ```
 
 
-To use Postgres DB Updater simply start it with:
+To use Postgres Multi DB deployment simply start it with:
 ```
 python app/main.py 
 ```
@@ -103,9 +103,9 @@ TASKS_PATH=/tasks/tasks.json
 ```
 
 
-### Testing Postgres DB Updater
+### Testing Postgres Multi DB deployment
 
-To test Postgres DB Updater prepare you *tasks.json* and point the app to the correct file.
+To test Postgres Multi DB deployment prepare you *tasks.json* and point the app to the correct file.
 Set up the *PRODUCTION* environmental variable to False and:
 PG_DB=db
 PG_USER=postgres=
